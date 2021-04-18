@@ -1,18 +1,13 @@
 import React from 'react';
-import backIcon from '../../assets/icons/backIcon.png';
-import searchIcon from '../../assets/icons/searchIcon.png';
 import ChampionshipCardList from '../../components/molecules/ChampionshipCardList';
+import Header from '../../components/molecules/Header';
 
-import { Container, Header, Image, NewChampionship } from './styles';
+import { Container, NewChampionship } from './styles';
 
 const ListChampionships: React.FC = () => {
   return (
     <Container>
-      <Header>
-        <Image src={backIcon} />
-        <Image src={searchIcon} />
-      </Header>
-
+      <Header search />
       <NewChampionship> Novo campeonato </NewChampionship>
       <ChampionshipCardList />
     </Container>
