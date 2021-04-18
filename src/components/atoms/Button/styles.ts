@@ -13,4 +13,9 @@ export const Container = styled.button<ButtonProps>`
   border: 0;
   font-weight: 600;
   color: #fff;
+
+  :disabled {
+    background: #c4c4c4;
+    cursor: not-allowed;
+  }
 `;
