@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import logo from '../../assets/imgs/logo.png';
 
 export const Container = styled.div`
   display: flex;
@@ -13,9 +14,13 @@ export const Container = styled.div`
 `;
 
 export const TopContainer = styled.div`
+  background-image: url(${logo});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   width: 100vw;
   height: 40vh;
-  background-color: #999;
+  background-color: #e5e5e5;
 `;
 
 export const MiddleContainer = styled.div`
