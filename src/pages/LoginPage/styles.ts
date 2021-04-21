@@ -19,9 +19,13 @@ export const TopContainer = styled.div`
 `;
 
 export const MiddleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100vw;
   height: 40vh;
   background-color: #494949;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export const BottomContainer = styled.div`

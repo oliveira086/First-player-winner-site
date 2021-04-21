@@ -8,12 +8,16 @@ import {
 } from './styles';
 
 import Button from '../../components/atoms/Button';
+import Input from '../../components/atoms/Input';
 
 const LoginPage: React.FC = () => {
   return (
     <Container>
       <TopContainer />
-      <MiddleContainer />
+      <MiddleContainer>
+        <Input />
+        <Input />
+      </MiddleContainer>
       <BottomContainer>
         <Button statusType="confirmation">Entrar</Button>
       </BottomContainer>
