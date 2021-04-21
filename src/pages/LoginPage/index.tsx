@@ -22,8 +22,8 @@ const LoginPage: React.FC = () => {
           <FraseLogin>Pronto para ser o maior vencedor?</FraseLogin>
           <FraseAbaixo>Acesse sua conta e inicie sua jornada!</FraseAbaixo>
         </FrasesContainer>
-        <Input />
-        <Input />
+        <Input title="Email" place="Email" />
+        <Input title="Senha" place="Senha" />
       </MiddleContainer>
       <BottomContainer>
         <Button statusType="confirmation">Entrar</Button>
