@@ -18,7 +18,8 @@ const Hr = styled.hr`
 `;
 
 const BalanceHeader = styled.div`
-  width: 80%;
+  width: 100vw;
+  padding-left: 30px;
   font-size: 14px;
 `;
 
