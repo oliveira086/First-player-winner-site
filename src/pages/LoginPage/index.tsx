@@ -19,7 +19,9 @@ const LoginPage: React.FC = () => {
       <TopContainer />
       <MiddleContainer>
         <FrasesContainer>
-          <FraseLogin>Pronto para ser o maior vencedor?</FraseLogin>
+          <FraseLogin>
+            Pronto para ser o <br /> maior vencedor?
+          </FraseLogin>
           <FraseAbaixo>Acesse sua conta e inicie sua jornada!</FraseAbaixo>
         </FrasesContainer>
         <Input title="Email" place="Email" />

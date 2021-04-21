@@ -42,23 +42,24 @@ export const BottomContainer = styled.div`
 `;
 
 export const FrasesContainer = styled.div`
+  padding-left: 1.875rem;
+  width: 100%;
+  display: flex;
   flex: 0.5;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: left;
 `;
 
 export const FraseLogin = styled.p`
-  width: 13.125rem;
-  font-size: 1.5rem;
+  font-size: 2.75rem;
   font-weight: 700;
-  line-height: 2.25rem;
+  line-height: 3.125rem;
   margin-bottom: 0.6875rem;
 `;
 
 export const FraseAbaixo = styled.p`
-  width: 16.75rem;
-  font-size: 0.875rem;
+  font-size: 1.25rem;
   font-weight: 300;
   line-height: 1.3125rem;
 `;
