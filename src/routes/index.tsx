@@ -9,7 +9,7 @@ import ListChampionships from '../pages/ListChampionships';
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
-    <Route path="/login" exact component={LoginPage} />
+    <Route path="/loginPage" exact component={LoginPage} />
     <Route path="/listchampionship" exact component={ListChampionships} />
   </Switch>
 );
