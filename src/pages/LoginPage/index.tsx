@@ -15,8 +15,8 @@ const LoginPage: React.FC = () => {
     <Container>
       <TopContainer />
       <MiddleContainer>
-        <Input />
-        <Input />
+        <Input title="Email" place="Email" />
+        <Input title="Senha" place="Senha" />
       </MiddleContainer>
       <BottomContainer>
         <Button statusType="confirmation">Entrar</Button>

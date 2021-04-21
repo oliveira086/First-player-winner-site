@@ -20,7 +20,7 @@ export const TopContainer = styled.div`
   background-position: center;
   width: 100vw;
   height: 40vh;
-  background-color: #e5e5e5;
+  background-color: #f7f7f7;
 `;
 
 export const MiddleContainer = styled.div`
@@ -28,7 +28,7 @@ export const MiddleContainer = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 40vh;
-  background-color: #494949;
+  background-color: #f7f7f7;
   justify-content: space-around;
   align-items: center;
 `;
