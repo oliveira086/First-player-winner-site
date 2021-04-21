@@ -40,10 +40,6 @@ const themeDark = {
   },
 };
 
-const Theme = ({ children }) => (
-  <ThemeProvider theme={typeTheme ? theme : themeDark}>
-    {children}
-  </ThemeProvider>
-);
+const Theme = () => <ThemeProvider theme={typeTheme ? theme : themeDark} />;
 
 export default Theme;
