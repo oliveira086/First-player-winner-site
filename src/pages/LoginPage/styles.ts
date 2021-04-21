@@ -7,8 +7,27 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  padding-bottom: 60px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+`;
+
+export const TopContainer = styled.div`
+  width: 100vw;
+  height: 40vh;
+  background-color: #999;
+`;
+
+export const MiddleContainer = styled.div`
+  width: 100vw;
+  height: 40vh;
+  background-color: #494949;
+`;
+
+export const BottomContainer = styled.div`
+  display: flex;
+  width: 100vw;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
 `;
