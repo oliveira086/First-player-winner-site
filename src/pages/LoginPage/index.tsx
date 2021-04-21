@@ -5,6 +5,9 @@ import {
   TopContainer,
   MiddleContainer,
   BottomContainer,
+  FrasesContainer,
+  FraseLogin,
+  FraseAbaixo,
 } from './styles';
 
 import Button from '../../components/atoms/Button';
@@ -15,6 +18,10 @@ const LoginPage: React.FC = () => {
     <Container>
       <TopContainer />
       <MiddleContainer>
+        <FrasesContainer>
+          <FraseLogin>Pronto para ser o maior vencedor?</FraseLogin>
+          <FraseAbaixo>Acesse sua conta e inicie sua jornada!</FraseAbaixo>
+        </FrasesContainer>
         <Input />
         <Input />
       </MiddleContainer>

@@ -28,7 +28,7 @@ export const MiddleContainer = styled.div`
   flex-direction: column;
   width: 100vw;
   height: 40vh;
-  background-color: #494949;
+  background-color: #ccc;
   justify-content: space-around;
   align-items: center;
 `;
@@ -40,3 +40,28 @@ export const BottomContainer = styled.div`
   justify-content: center;
   align-items: center;
 `;
+
+export const FrasesContainer = styled.div`
+  flex: 0.5;
+  flex-direction: column;
+  align-items: center;
+  justify-content: left;
+`;
+
+export const FraseLogin = styled.p`
+  width: 13.125rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.25rem;
+  margin-bottom: 0.6875rem;
+`;
+
+export const FraseAbaixo = styled.p`
+  width: 16.75rem;
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.3125rem;
+`;
+
+// <p>Pronto para ser o maior vencedor?</p>
+// <p>Acesse sua conta e inicie sua jornada!</p>
