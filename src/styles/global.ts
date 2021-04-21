@@ -20,7 +20,7 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-  ul {
+  ul, li {
     list-style: none;
   }
   a {
