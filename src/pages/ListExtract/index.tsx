@@ -5,8 +5,8 @@ import { GrTransaction } from 'react-icons/gr';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 
 import Header from '../../components/molecules/Header';
-import cashBack from '../../assets/icons/cashback.svg';
 import Transaction from '../../components/atoms/Transaction';
+import BalanceHeader from '../../components/molecules/BalanceHeader';
 
 const Container = styled.div`
   width: 100vw;
@@ -21,22 +21,6 @@ const Hr = styled.hr`
   width: 100%;
 `;
 
-const BalanceHeader = styled.div`
-  width: 100vw;
-  padding-left: 30px;
-  font-size: 14px;
-`;
-
-const Strong = styled.strong`
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 30px;
-`;
-
-const Icon = styled.img`
-  margin-right: 9px;
-`;
-
 const CardContainer = styled.div`
   display: flex;
   width: 100vw;
@@ -44,6 +28,7 @@ const CardContainer = styled.div`
   margin-top: 30px;
   padding-left: 30px;
   flex-direction: row;
+  scrollbar-color: transparent transparent;
   overflow-x: auto;
   ::-webkit-scrollbar {
     display: none;
@@ -89,12 +74,7 @@ const ListExtract: React.FC = () => {
   return (
     <Container>
       <Header />
-      <BalanceHeader>
-        <Icon src={cashBack} alt="cash" />
-        Saldo disponível
-        <br />
-        <Strong>$ 100,00</Strong>
-      </BalanceHeader>
+      <BalanceHeader salt="130,95" />
       <CardContainer>
         <Card>
           <RiMoneyDollarCircleFill size="18px" />
