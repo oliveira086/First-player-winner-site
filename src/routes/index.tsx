@@ -6,6 +6,7 @@ import PreLoginPage from '../pages/PreLoginPage';
 import LoginPage from '../pages/LoginPage';
 import ListChampionships from '../pages/ListChampionships';
 import ListExtract from '../pages/ListExtract';
+import ListContacts from '../pages/ListContacts';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -13,6 +14,7 @@ const Routes: React.FC = () => (
     <Route path="/loginPage" exact component={LoginPage} />
     <Route path="/listchampionship" exact component={ListChampionships} />
     <Route path="/extract" exact component={ListExtract} />
+    <Route path="/contacts" exact component={ListContacts} />
   </Switch>
 );
 

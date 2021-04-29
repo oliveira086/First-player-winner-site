@@ -3,6 +3,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
+import { AiOutlineQrcode } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 export const Container = styled.header`
@@ -32,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({ search = false, qrCode = false }) => {
       )}
       {qrCode && (
         <IconContext.Provider value={{ size: '18px' }}>
-          <FiSearch size={18} />
+          <AiOutlineQrcode size={18} />
         </IconContext.Provider>
       )}
     </Container>
