@@ -1,4 +1,6 @@
 import React from 'react';
+import HeaderMainPage from '../../components/molecules/HeaderMainPage';
+
 import NavigationMenu from '../../components/molecules/NavigationMenu';
 import Carousel from '../../components/molecules/Carousel';
 import bannerImg from '../../assets/imgs/banner.png';
@@ -16,7 +18,8 @@ import {
 const Home: React.FC = () => {
   return (
     <Container>
-      <h1>Hello from Home page</h1>
+      <HeaderMainPage />
+
       <NavigationMenu />
 
       <CarouselContainer>
