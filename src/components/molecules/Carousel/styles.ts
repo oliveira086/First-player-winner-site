@@ -1,31 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  .slick-next {
-    width: 50px;
-    height: 50px;
-    z-index: 999;
-    background: url('../../../assets/icons/next.svg') center center no-repeat !important;
-    background-size: 100% 100%;
+  .slider {
+    width: 50%;
+    margin: 100px auto;
   }
 
-  .slick-next::before {
-    display: none;
+  .slick-slide {
+    margin: 0px 20px;
   }
 
-  .slick-prev {
-    width: 50px;
-    height: 50px;
-    z-index: 999;
-    background: url('../../../assets/icons/back.svg') center center no-repeat !important;
-    background-size: 100% 100%;
+  .slick-slide img {
+    width: 100%;
   }
 
-  .slick-disabled {
-    opacity: 0.25;
-  }
-
-  .slick-prev::before {
-    display: none;
+  .slick-prev:before,
+  .slick-next:before {
+    color: black;
   }
 `;

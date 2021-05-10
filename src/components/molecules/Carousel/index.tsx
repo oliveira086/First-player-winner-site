@@ -1,25 +1,27 @@
 import React from 'react';
 import Slider from 'react-slick';
+
 import { Container } from './styles';
 
-const Carousel: React.FC = ({ children }) => {
+interface ICarousel {
+  slidesToShow?: number;
+  dots?: boolean;
+  arrows?: boolean;
+}
+
+const Carousel: React.FC<ICarousel> = ({
+  children,
+  arrows = true,
+  slidesToShow = 1,
+  dots = true,
+}) => {
   const settings = {
-    dots: true,
+    dots,
     infinite: true,
     speed: 500,
-    slidesToShow: 1.1,
+    slidesToShow,
     slidesToScroll: 1.0,
-    arrows: true,
-
-    responsive: [
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    arrows,
   };
   return (
     <Container>
