@@ -9,19 +9,6 @@ export const Container = styled.section`
   align-items: center;
 `;
 
-export const Header = styled.header`
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-export const Image = styled.img`
-  margin: 0 36.5px;
-  height: 18px;
-`;
-
 export const NewChampionship = styled.button`
   width: 90%;
   height: 60px;
@@ -34,5 +21,6 @@ export const NewChampionship = styled.button`
   font-weight: 600;
   font-size: 18px;
   outline: none;
+  border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 `;
