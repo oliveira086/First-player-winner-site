@@ -19,9 +19,8 @@ const Home: React.FC = () => {
   return (
     <Container>
       <HeaderMainPage />
-
+      Hello from home page
       <NavigationMenu />
-
       <CarouselContainer>
         <Carousel slidesToShow={1.1} arrows={false}>
           <Image source={bannerImg} width="300px" height="150px" />
@@ -29,7 +28,6 @@ const Home: React.FC = () => {
           <Image source={bannerImg} width="300px" height="150px" />
         </Carousel>
       </CarouselContainer>
-
       <GamesContainer>
         <h2>Jogos</h2>
         <Carousel slidesToShow={2} dots={false}>
@@ -38,7 +36,6 @@ const Home: React.FC = () => {
           <Image source={freefireImg} width="140px" height="32px" />
         </Carousel>
       </GamesContainer>
-
       <ChampionShipContainer>
         <h2>Seus campeonatos</h2>
 
