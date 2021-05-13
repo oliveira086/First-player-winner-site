@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { AiFillBank } from 'react-icons/ai';
 import { GrTransaction } from 'react-icons/gr';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
@@ -14,6 +13,7 @@ import {
   Hr,
   TransactionContainer,
 } from './styles';
+import NavigationMenu from '../../components/molecules/NavigationMenu';
 
 const ListExtract: React.FC = () => {
   return (
@@ -58,6 +58,7 @@ const ListExtract: React.FC = () => {
         />
         <Transaction name="John Wich" value="15,50" date="31/12" />
       </TransactionContainer>
+      <NavigationMenu />
     </Container>
   );
 };
