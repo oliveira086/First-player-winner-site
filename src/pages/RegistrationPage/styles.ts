@@ -4,7 +4,7 @@ import logo from '../../assets/imgs/logo.png';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100vw;
   height: 100vh;
@@ -12,24 +12,6 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-color: #f7f7f7;
-`;
-
-export const TopContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100vw;
-  height: 40vh;
-`;
-
-export const FrasesContainer = styled.div`
-  display: flex;
-  padding-left: 1.875rem;
-  width: 100%;
-  flex: 1;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: left;
-  margin-top: 60px;
 `;
 
 export const Logo = styled.div`

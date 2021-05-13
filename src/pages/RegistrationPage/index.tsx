@@ -2,31 +2,21 @@ import React from 'react';
 
 import {
   Container,
-  TopContainer,
-  FrasesContainer,
   MiddleContainer,
   BottomContainer,
   InputContainer,
   FraseCadastroContainer,
   FraseCadastro,
-  FraseAbaixo,
-  FraseAcima,
-  Logo,
 } from './styles';
 
 import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
+import HeaderLogin from '../../components/molecules/HeaderLogin';
 
 const LoginPage: React.FC = () => {
   return (
     <Container>
-      <TopContainer>
-        <FrasesContainer>
-          <FraseAcima>Pronto para ser o maior vencedor?</FraseAcima>
-          <FraseAbaixo>Crie sua conta e inicie sua jornada!</FraseAbaixo>
-        </FrasesContainer>
-        <Logo />
-      </TopContainer>
+      <HeaderLogin />
       <MiddleContainer>
         <FraseCadastroContainer>
           <FraseCadastro>Cadastre-se</FraseCadastro>
