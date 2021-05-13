@@ -1,22 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import cashBack from '../../../assets/icons/cashback.svg';
-
-const BalanceContainer = styled.div`
-  width: 100vw;
-  padding-left: 30px;
-  font-size: 14px;
-`;
-
-const Strong = styled.strong`
-  font-weight: 700;
-  font-size: 18px;
-  margin-bottom: 30px;
-`;
-
-const Icon = styled.img`
-  margin-right: 9px;
-`;
+import { BalanceContainer, Icon, Strong } from './styles';
 
 interface BalanceProps {
   salt: string;

@@ -5,15 +5,7 @@ import styled from 'styled-components';
 import { FiChevronLeft, FiSearch } from 'react-icons/fi';
 import { AiOutlineQrcode } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
-
-export const Container = styled.header`
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 30px;
-`;
+import { Container } from './styles';
 
 interface HeaderProps {
   search?: boolean | undefined;
