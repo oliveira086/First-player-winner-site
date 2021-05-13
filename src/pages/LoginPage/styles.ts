@@ -12,7 +12,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
 `;
-
+// sobe aí pls
 export const TopContainer = styled.div`
   background-image: url(${logo});
   background-size: cover;
@@ -39,6 +39,7 @@ export const BottomContainer = styled.div`
   height: 20vh;
   justify-content: center;
   align-items: center;
+  background-color: #f7f7f7;
 `;
 
 export const FrasesContainer = styled.div`
@@ -52,14 +53,14 @@ export const FrasesContainer = styled.div`
 `;
 
 export const FraseLogin = styled.p`
-  font-size: 2.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  line-height: 3.125rem;
+  line-height: 2.25rem;
   margin-bottom: 0.6875rem;
 `;
 
 export const FraseAbaixo = styled.p`
-  font-size: 1.25rem;
+  font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.3125rem;
 `;
