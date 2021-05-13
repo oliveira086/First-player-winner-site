@@ -3,6 +3,7 @@ import { IconContext } from 'react-icons';
 import { FiSearch } from 'react-icons/fi';
 import BalanceHeader from '../../components/molecules/BalanceHeader';
 import Header from '../../components/molecules/Header';
+import NavigationMenu from '../../components/molecules/NavigationMenu';
 import {
   ContactCard,
   ContactsContainer,
@@ -36,6 +37,7 @@ const ListContacts: React.FC = () => {
           <span className="email"> jj_tudo_pode321@hotmail.com</span>
         </ContactCard>
       </ContactsContainer>
+      <NavigationMenu />
     </Container>
   );
 };
