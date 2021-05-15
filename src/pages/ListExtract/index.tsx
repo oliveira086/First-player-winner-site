@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { AiFillBank } from 'react-icons/ai';
 import { GrTransaction } from 'react-icons/gr';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';

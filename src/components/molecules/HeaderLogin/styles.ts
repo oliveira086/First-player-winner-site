@@ -21,7 +21,7 @@ export const TextContainer = styled.div`
   p {
     font-weight: bold;
     font-size: 24px;
-    line-height: 36px;
+    line-height: 32px;
   }
   span {
     font-weight: 300;
