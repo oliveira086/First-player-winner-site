@@ -18,7 +18,7 @@ const ListExtract: React.FC = () => {
   return (
     <Container>
       <Header />
-      <BalanceHeader salt="130,95" />
+      <BalanceHeader balance="130,95" />
       <CardContainer>
         <Card>
           <RiMoneyDollarCircleFill size="18px" />

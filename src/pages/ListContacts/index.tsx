@@ -15,7 +15,7 @@ const ListContacts: React.FC = () => {
   return (
     <Container>
       <Header qrCode />
-      <BalanceHeader salt="150,00" />
+      <BalanceHeader balance="150,00" />
       <SearchBoxContainer>
         <IconContext.Provider value={{ size: '18px', color: '#696969' }}>
           <FiSearch size={18} />
