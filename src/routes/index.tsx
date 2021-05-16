@@ -12,6 +12,9 @@ import ListContacts from '../pages/ListContacts';
 import ChampionshipDetails from '../pages/ChampionshipsDetails';
 import RecoverPassword from '../pages/RecoverPassword';
 import RecoverPasswordConfirm from '../pages/RecoverPasswordConfirm';
+import Transaction from '../pages/TransactionFlow/Transaction';
+import ConfirmTransaction from '../pages/TransactionFlow/ConfirmTransaction';
+import TransactionAproved from '../pages/TransactionFlow/TransactionAproved';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -25,6 +28,9 @@ const Routes: React.FC = () => (
     <Route path="/contacts" exact component={ListContacts} />
     <Route path="/recover" exact component={RecoverPassword} />
     <Route path="/recoverconfirm" exact component={RecoverPasswordConfirm} />
+    <Route path="/transaction" exact component={Transaction} />
+    <Route path="/confirmtransaction" exact component={ConfirmTransaction} />
+    <Route path="/transactionaproved" exact component={TransactionAproved} />
   </Switch>
 );
 
