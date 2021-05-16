@@ -93,10 +93,12 @@ export const CarouselItemContainer = styled.div`
 
 export const CarouselItem = styled.div`
   display: flex;
-
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 10px;
   width: 120px;
-  height: 100px;
-  max-width: 120px;
+  height: 140px;
+  max-width: 140px;
   background: #e9e9e9;
   padding: 20px;
   position: relative;
