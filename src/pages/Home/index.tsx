@@ -4,8 +4,10 @@ import HeaderMainPage from '../../components/molecules/HeaderMainPage';
 import NavigationMenu from '../../components/molecules/NavigationMenu';
 import Carousel from '../../components/molecules/Carousel';
 import bannerImg from '../../assets/imgs/banner.png';
-import freefireImg from '../../assets/imgs/free-fire.png';
-import pubg from '../../assets/imgs/pubg.png';
+
+import freefireImg from '../../assets/imgs/games/free-fire.png';
+import pubgImg from '../../assets/imgs/games/pubg.png';
+
 import Image from '../../components/atoms/Image';
 import {
   Container,
@@ -13,6 +15,7 @@ import {
   GamesContainer,
   ChampionShipContainer,
   ChampionShipItem,
+  ChampionShipItemContent,
 } from './styles';
 
 const Home: React.FC = () => {
@@ -31,19 +34,27 @@ const Home: React.FC = () => {
       <GamesContainer>
         <h2>Jogos</h2>
         <Carousel slidesToShow={2} dots={false}>
-          <Image source={pubg} width="56px" height="32px" />
-          <Image source={freefireImg} width="140px" height="32px" />
-          <Image source={freefireImg} width="140px" height="32px" />
+          <Image source={pubgImg} width="66px" height="42px" />
+          <Image source={freefireImg} width="150px" height="32px" />
+          <Image source={freefireImg} width="150px" height="32px" />
         </Carousel>
       </GamesContainer>
       <ChampionShipContainer>
         <h2>Seus campeonatos</h2>
 
-        <Carousel slidesToShow={2} arrows={false}>
-          <ChampionShipItem />
-          <ChampionShipItem />
-          <ChampionShipItem />
-          <ChampionShipItem />
+        <Carousel slidesToShow={2.5} arrows={false}>
+          <ChampionShipItem>
+            <ChampionShipItemContent />
+          </ChampionShipItem>
+          <ChampionShipItem>
+            <ChampionShipItemContent />
+          </ChampionShipItem>
+          <ChampionShipItem>
+            <ChampionShipItemContent />
+          </ChampionShipItem>
+          <ChampionShipItem>
+            <ChampionShipItemContent />
+          </ChampionShipItem>
         </Carousel>
       </ChampionShipContainer>
     </Container>
