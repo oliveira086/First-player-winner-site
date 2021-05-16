@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useCallback, useEffect, useState } from 'react';
 import { formatISO, parseISO } from 'date-fns';
 import { FiChevronLeft } from 'react-icons/fi';
 import NavigationMenu from '../../components/molecules/NavigationMenu';
+import DateInput from '../../components/atoms/DateInput';
 import Carousel from '../../components/molecules/Carousel';
-
+import Button from '../../components/atoms/Button';
 import {
   Container,
   Content,
@@ -16,16 +18,6 @@ import profileImg from '../../assets/imgs/profile.jpg';
 
 const UpdateProfile: React.FC = () => {
   const [birthDate, setBirthDate] = useState('');
-
-  useEffect(() => {
-    // if (birthDate.length === 10) {
-    //   const formattedDate = formatISO(parseISO(birthDate), {
-    //     format: 'extended',
-    //     representation: 'complete',
-    //   });
-    //   console.log(formattedDate);
-    // }
-  }, [birthDate]);
 
   return (
     <Container>
@@ -51,11 +43,10 @@ const UpdateProfile: React.FC = () => {
             </InputContainer>
             <InputContainer>
               <label htmlFor="name">Data de nascimento</label>
-              <input
-                id="name"
-                type="date"
-                data-date-format="DD MMMM YYYY"
-                onChange={e => setBirthDate(e.target.value)}
+              <DateInput
+                mask="dd/mm/yyyy"
+                placeholder="dd/mm/yyyy"
+                onChange={value => setBirthDate(value)}
                 value={birthDate}
               />
             </InputContainer>
@@ -65,12 +56,23 @@ const UpdateProfile: React.FC = () => {
             </InputContainer>
           </form>
 
-          <Carousel arrows={false} slidesToShow={1} dots={false}>
-            <CarouselItem>Alterar chave pix</CarouselItem>
-            <CarouselItem>Alterar senha de confirmação</CarouselItem>
-            <CarouselItem>Alterar senha de acesso</CarouselItem>
-            <CarouselItem>Alguma outra coisa aqui</CarouselItem>
+          <Carousel arrows={false} slidesToShow={3} dots={false}>
+            <CarouselItem>
+              <div>Alterar chave pix</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div> Alterar senha de confirmação</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div>Alterar senha de acesso</div>
+            </CarouselItem>
+            <CarouselItem>
+              <div>Alguma outra coisa aqui</div>
+            </CarouselItem>
           </Carousel>
+          <Button statusType="confirmation" maxWidth="100%">
+            Salvar alterações
+          </Button>
         </main>
       </Content>
       <NavigationMenu />

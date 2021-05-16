@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  padding-bottom: 80px;
+`;
 
 interface HeaderProps {
   backgroundImage: string;
@@ -13,6 +15,10 @@ export const Content = styled.div`
     strong {
       font-size: 18px;
       font-weight: 700;
+    }
+
+    > button {
+      margin-top: 60px;
     }
   }
 `;
@@ -81,26 +87,17 @@ export const InputContainer = styled.div`
   }
 `;
 
-export const CarouselItemContainer = styled.div`
-  background: #e9e9e9;
-  width: 90%;
-  min-width: 50px;
-  height: 130px;
-  border-radius: 5px;
-  display: flex;
-  margin: 0 200px;
-`;
-
 export const CarouselItem = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
   border-radius: 10px;
-  width: 120px;
-  height: 140px;
-  max-width: 140px;
+  height: 120px;
+  max-width: 120px;
   background: #e9e9e9;
-  padding: 20px;
-  position: relative;
+  padding: 20px 10px;
   width: 50px;
+  font-size: 12px;
+  cursor: pointer;
+  div {
+    position: relative;
+    top: 45px;
+  }
 `;

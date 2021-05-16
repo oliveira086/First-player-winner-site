@@ -19,7 +19,7 @@ export const Container = styled.button<ButtonProps>`
 
   width: 100%;
   height: 45px;
-  max-width: 350px;
+  max-width: ${({ maxWidth }) => maxWidth || '350px'};
   margin: 12px 0px;
   border: 0;
   font-weight: 600;
