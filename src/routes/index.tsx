@@ -12,19 +12,26 @@ import ListContacts from '../pages/ListContacts';
 import ChampionshipDetails from '../pages/ChampionshipsDetails';
 import RecoverPassword from '../pages/RecoverPassword';
 import RecoverPasswordConfirm from '../pages/RecoverPasswordConfirm';
+import UpdateProfile from '../pages/UpdateProfile';
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
     <Route path="/home" component={Home} />
-    <Route path="/loginPage" exact component={LoginPage} />
-    <Route path="/registrationPage" exact component={RegistrationPage} />
-    <Route path="/listchampionship" exact component={ListChampionships} />
-    <Route path="/championship/details" exact component={ChampionshipDetails} />
-    <Route path="/extract" exact component={ListExtract} />
-    <Route path="/contacts" exact component={ListContacts} />
-    <Route path="/recover" exact component={RecoverPassword} />
-    <Route path="/recoverconfirm" exact component={RecoverPasswordConfirm} />
+    <Route path="/loginPage" component={LoginPage} />
+    <Route path="/registrationPage" component={RegistrationPage} />
+    <Route path="/listchampionship" component={ListChampionships} />
+    <Route path="/championship/details" component={ChampionshipDetails} />
+    <Route path="/extract" component={ListExtract} />
+    <Route path="/contacts" component={ListContacts} />
+    <Route path="/recover" component={RecoverPassword} />
+    <Route path="/recoverconfirm" component={RecoverPasswordConfirm} />
+    <Route
+      path="/profile"
+      exact
+      component={() => <h1>⚙️ Page under construction !</h1>}
+    />
+    <Route path="/profile/update" component={UpdateProfile} />
   </Switch>
 );
 
