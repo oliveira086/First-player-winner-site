@@ -12,11 +12,14 @@ export const Container = styled.div`
     font-size: 18px;
     font-weight: 500;
   }
+
+  padding-bottom: 100px;
 `;
 
 export const CarouselContainer = styled.div`
   margin: 60px;
-  width: 380px;
+  width: 100%;
+  max-width: 380px;
   padding: 20px;
 `;
 
@@ -24,17 +27,31 @@ export const GamesContainer = styled.div`
   padding: 0 20px;
   width: 100%;
   margin-bottom: 20px;
+
+  /* Carousel */
+  div {
+    margin: 0%;
+    margin: 0 auto;
+  }
 `;
 
 export const ChampionShipContainer = styled.div`
   width: 100%;
-  padding: 0 20px;
   padding: 20px;
+  margin: 20px 0;
+`;
+
+export const ChampionShipItemContent = styled.div`
+  background: #e9e9e9;
+  width: 90%;
+  min-width: 100px;
+  height: 130px;
+  border-radius: 5px;
+  display: flex;
+  margin: 0 200px;
 `;
 
 export const ChampionShipItem = styled.div`
-  background: #f5f5f5;
-  width: 10px;
-  height: 100px;
-  border-radius: 5px;
+  position: relative;
+  width: 100%;
 `;
