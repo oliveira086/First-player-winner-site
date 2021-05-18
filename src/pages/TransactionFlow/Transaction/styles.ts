@@ -35,7 +35,7 @@ export const InputContainer = styled.div<InputProps>`
   align-items: center;
   justify-content: center;
   padding-bottom: 140px;
-  .content {
+  > div {
     width: calc(100% - 60px);
     display: flex;
     justify-content: center;
