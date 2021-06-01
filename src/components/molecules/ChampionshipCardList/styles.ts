@@ -9,6 +9,12 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   position: relative;
   margin-bottom: 40px;
+  cursor: pointer;
+  transition: background 0.2s;
+
+  :hover {
+    background: #f5f5f5;
+  }
 `;
 
 export const GameLabel = styled.div`

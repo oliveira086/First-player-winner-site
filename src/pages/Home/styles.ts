@@ -4,16 +4,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-
+  height: 100%;
   h2 {
     width: 100%;
     margin-bottom: 30px;
     font-size: 18px;
     font-weight: 500;
   }
-
-  padding-bottom: 100px;
 `;
 
 export const CarouselContainer = styled.div`

@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
   body, input, button {
     font-family: 'Poppins', sans-serif;
