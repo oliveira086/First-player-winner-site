@@ -20,6 +20,11 @@ export const CarouselContainer = styled.div`
   padding: 20px;
 `;
 
+export const ChampionShipCarouselContainer = styled.div`
+  width: 100%;
+  padding-bottom: 20px;
+`;
+
 export const GamesContainer = styled.div`
   padding: 0 20px;
   width: 100%;

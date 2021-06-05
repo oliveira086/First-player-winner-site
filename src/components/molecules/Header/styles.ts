@@ -8,3 +8,5 @@ export const Container = styled.header`
   align-items: center;
   padding: 0 30px;
 `;
+
+export const IconContainer = styled.div``;
