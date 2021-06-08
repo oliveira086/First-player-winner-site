@@ -3,16 +3,16 @@ import cashBack from '../../../assets/icons/cashback.svg';
 import { BalanceContainer, Icon, Strong } from './styles';
 
 interface BalanceProps {
-  salt: string;
+  balance: string;
 }
 
-const BalanceHeader: React.FC<BalanceProps> = ({ salt }) => {
+const BalanceHeader: React.FC<BalanceProps> = ({ balance }) => {
   return (
     <BalanceContainer>
       <Icon src={cashBack} alt="cash" />
       Saldo disponível
       <br />
-      <Strong>$ {salt}</Strong>
+      <Strong>$ {balance}</Strong>
     </BalanceContainer>
   );
 };
