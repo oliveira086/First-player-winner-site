@@ -1,13 +1,16 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
 
 import { Container, Header } from './styles';
 
 const ChampionshipDetails: React.FC = () => {
+  const { push } = useHistory();
+
   return (
     <Container>
       <Header>
-        <button type="button">
+        <button type="button" onClick={() => push('/championship')}>
           <FiChevronLeft size={30} />
         </button>
       </Header>

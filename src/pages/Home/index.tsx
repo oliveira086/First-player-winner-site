@@ -16,13 +16,13 @@ import {
   ChampionShipContainer,
   ChampionShipItem,
   ChampionShipItemContent,
+  ChampionShipCarouselContainer,
 } from './styles';
 
 const Home: React.FC = () => {
   return (
     <Container>
       <HeaderMainPage />
-      Hello from home page
       <NavigationMenu />
       <CarouselContainer>
         <Carousel slidesToShow={1.1} arrows={false}>
@@ -42,20 +42,22 @@ const Home: React.FC = () => {
       <ChampionShipContainer>
         <h2>Seus campeonatos</h2>
 
-        <Carousel slidesToShow={2.5} arrows={false}>
-          <ChampionShipItem>
-            <ChampionShipItemContent />
-          </ChampionShipItem>
-          <ChampionShipItem>
-            <ChampionShipItemContent />
-          </ChampionShipItem>
-          <ChampionShipItem>
-            <ChampionShipItemContent />
-          </ChampionShipItem>
-          <ChampionShipItem>
-            <ChampionShipItemContent />
-          </ChampionShipItem>
-        </Carousel>
+        <ChampionShipCarouselContainer>
+          <Carousel slidesToShow={2.5} arrows={false}>
+            <ChampionShipItem>
+              <ChampionShipItemContent />
+            </ChampionShipItem>
+            <ChampionShipItem>
+              <ChampionShipItemContent />
+            </ChampionShipItem>
+            <ChampionShipItem>
+              <ChampionShipItemContent />
+            </ChampionShipItem>
+            <ChampionShipItem>
+              <ChampionShipItemContent />
+            </ChampionShipItem>
+          </Carousel>
+        </ChampionShipCarouselContainer>
       </ChampionShipContainer>
     </Container>
   );
