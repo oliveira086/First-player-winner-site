@@ -1,6 +1,5 @@
-import React, { InputHTMLAttributes, useState } from 'react';
-import { FiPlus, FiMinus } from 'react-icons/fi';
-import styled, { css } from 'styled-components';
+import React, { InputHTMLAttributes } from 'react';
+import styled from 'styled-components';
 
 interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
   value: string;
@@ -17,9 +16,9 @@ const Container = styled.div`
   margin-bottom: 30px;
 `;
 
-const Select = styled.div`
+const Select = styled.select`
   width: calc(100vw - 60px);
-  height: auto;
+  height: 40px;
   border: 2px solid #020c28;
   border-radius: 10px;
   background-color: inherit;
@@ -28,43 +27,12 @@ const Select = styled.div`
   font-size: 12px;
   font-weight: 500;
   position: relative;
-  padding-top: 30px;
-  padding-bottom: 12px;
 `;
 
-const InputContainer = styled.div`
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  div,
-  input {
-    height: 30px;
-    width: 150px;
-    border: 2px solid black;
-    border-radius: 5px;
-    background-color: #d2d1d3;
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    margin-right: 20px;
-    flex: 3;
-  }
-  input {
-    width: 100px;
-    flex: 4;
-  }
-  div span {
-    font-weight: 500;
-    font-size: 12px;
-  }
-`;
-
-const Label = styled.div`
+const Viadagem = styled.div`
   display: flex;
   position: absolute;
-  width: auto;
+  width: 80px;
   height: 20px;
   justify-items: center;
   align-items: center;
@@ -77,110 +45,15 @@ const Label = styled.div`
   left: 20px;
 `;
 
-const Plus = styled.button`
-  display: flex;
-  position: absolute;
-  width: 30px;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  background-color: #00af54;
-  font-size: 12px;
-  border-radius: 5px;
-  top: -15px;
-  right: -15px;
-  border: none;
-  :active {
-    background-color: rgba(20, 146, 81, 1);
-  }
-`;
-
-interface RemoveProp {
-  hidden?: boolean;
-}
-
-const RemoveIcon = styled.button<RemoveProp>`
-  width: 30px;
-  height: 30px;
-  background-color: #e80234;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  border-radius: 5px;
-  :active {
-    background-color: #c30831;
-  }
-  ${props =>
-    props.hidden &&
-    css`
-      background-color: #d8d8d8;
-      cursor: not-allowed;
-      :active {
-        background-color: #d2d1d3;
-      }
-    `}
-`;
-
-const SelectInput: React.FC<SelectProps> = () => {
-  const [countWinners, setCountWinners] = useState(1);
-  const [winnerList, setWinnerList] = useState([40]);
-
-  function handleAddWinner() {
-    if (countWinners < 3) {
-      setCountWinners(old => old + 1);
-      setWinnerList(old => [...old, 0]);
-    }
-  }
-  function handleRemove(idx: number) {
-    if (countWinners >= 1) {
-      setCountWinners(old => old - 1);
-      setWinnerList(old => old.filter((_, i) => i !== idx));
-    }
-  }
-  function handleChangeAwards(idx: number, value: number) {
-    setWinnerList(old => old.map((val, i) => (i === idx ? value : val)));
-  }
-
+const SelectInput: React.FC<SelectProps> = ({ value, items, setValue }) => {
   return (
     <Container>
-      <Select>
-        {winnerList.map((i, idx) =>
-          idx === 0 ? (
-            <InputContainer>
-              <div>
-                <span>{idx + 1}° Colocado</span>
-              </div>
-              <input
-                value={winnerList[idx]}
-                type="number"
-                onChange={e => handleChangeAwards(idx, Number(e.target.value))}
-              />
-              <RemoveIcon hidden>
-                <FiMinus color="white" size={24} />
-              </RemoveIcon>
-            </InputContainer>
-          ) : (
-            <InputContainer>
-              <div>
-                <span>{idx + 1}° Colocado</span>
-              </div>
-              <input
-                value={winnerList[idx]}
-                type="number"
-                onChange={e => handleChangeAwards(idx, Number(e.target.value))}
-              />
-              <RemoveIcon onClick={() => handleRemove(idx)}>
-                <FiMinus color="white" size={24} />
-              </RemoveIcon>
-            </InputContainer>
-          ),
-        )}
+      <Select value={value} onChange={e => setValue(e.target.value)}>
+        {items.map(i => (
+          <option value={i}>{i}</option>
+        ))}
       </Select>
-      <Label>Valor de premiação</Label>
-      <Plus onClick={() => handleAddWinner()}>
-        <FiPlus color="white" size={24} />
-      </Plus>
+      <Viadagem>Games</Viadagem>
     </Container>
   );
 };

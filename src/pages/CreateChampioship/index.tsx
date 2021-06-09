@@ -30,11 +30,7 @@ const CreateChampionship: React.FC = () => {
         items={games}
         setValue={setGameSelected}
       />
-      <AwardInput
-        value={gameSelected}
-        items={games}
-        setValue={setGameSelected}
-      />
+      <AwardInput />
     </Container>
   );
 };
