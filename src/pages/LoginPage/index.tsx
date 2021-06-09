@@ -1,35 +1,35 @@
 import React from 'react';
-
-import {
-  Container,
-  TopContainer,
-  MiddleContainer,
-  BottomContainer,
-  FrasesContainer,
-  FraseLogin,
-  FraseAbaixo,
-} from './styles';
+import { Link } from 'react-router-dom';
+import { Container, Footer, Content, Form, LinkContainer } from './styles';
 
 import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
+import logoImg from '../../assets/imgs/logo.png';
 
 const LoginPage: React.FC = () => {
   return (
     <Container>
-      <TopContainer />
-      <MiddleContainer>
-        <FrasesContainer>
-          <FraseLogin>
-            Pronto para ser o <br /> maior vencedor?
-          </FraseLogin>
-          <FraseAbaixo>Acesse sua conta e inicie sua jornada!</FraseAbaixo>
-        </FrasesContainer>
-        <Input title="Email" place="Email" />
-        <Input title="Senha" place="Senha" />
-      </MiddleContainer>
-      <BottomContainer>
+      <Content>
+        <header>
+          <img src={logoImg} alt="first player winner" />
+        </header>
+        <h2>
+          Pronto para ser o <br /> maior vencedor?
+        </h2>
+        <p>Acesse sua conta e inicie sua jornada!</p>
+
+        <Form>
+          <Input title="Email" placeholder="Email" />
+          <Input title="Senha" placeholder="Senha" />
+        </Form>
+        <LinkContainer>
+          <Link to="/password/recover">Recuperar senha?</Link>
+        </LinkContainer>
+      </Content>
+      <Footer>
         <Button statusType="confirmation">Entrar</Button>
-      </BottomContainer>
+        <Link to="/register">Cadastre-se</Link>
+      </Footer>
     </Container>
   );
 };

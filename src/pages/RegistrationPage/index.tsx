@@ -22,9 +22,9 @@ const LoginPage: React.FC = () => {
           <FraseCadastro>Cadastre-se</FraseCadastro>
         </FraseCadastroContainer>
         <InputContainer>
-          <Input title="Email" place="Email" />
-          <Input title="Senha" place="Senha" />
-          <Input title="Confirmar Senha" place="Confirmar Senha" />
+          <Input title="Email" placeholder="Email" />
+          <Input title="Senha" placeholder="Senha" />
+          <Input title="Confirmar Senha" placeholder="Confirmar Senha" />
         </InputContainer>
       </MiddleContainer>
       <BottomContainer>
