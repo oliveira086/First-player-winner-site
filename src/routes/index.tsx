@@ -2,9 +2,8 @@ import React from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
+import AuthPage from '../pages/Auth';
 import PreLoginPage from '../pages/PreLoginPage';
-import LoginPage from '../pages/LoginPage';
-import RegistrationPage from '../pages/RegistrationPage';
 import ListChampionships from '../pages/ListChampionships';
 import Home from '../pages/Home';
 import ListExtract from '../pages/ListExtract';
@@ -20,8 +19,7 @@ const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
     <Route path="/home" component={Home} />
-    <Route path="/login" component={LoginPage} />
-    <Route path="/register" component={RegistrationPage} />
+    <Route path="/auth" component={AuthPage} />
     <Route path="/championship" component={ListChampionships} />
     <Route path="/championship/details" component={ChampionshipDetails} />
     <Route path="/extract" component={ListExtract} />

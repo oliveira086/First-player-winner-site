@@ -7,7 +7,7 @@ const PreLoginPage: React.FC = () => {
   const { push } = useHistory();
   return (
     <Container>
-      <Button statusType="confirmation" onClick={() => push('/login')}>
+      <Button statusType="confirmation" onClick={() => push('/auth')}>
         Entrar
       </Button>
     </Container>
