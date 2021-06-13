@@ -14,12 +14,14 @@ import Transaction from '../pages/TransactionFlow/Transaction';
 import ConfirmTransaction from '../pages/TransactionFlow/ConfirmTransaction';
 import TransactionAproved from '../pages/TransactionFlow/TransactionAproved';
 import Deposit from '../pages/Deposit';
+import UpdateProfile from '../pages/UpdateProfile';
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
     <Route path="/home" component={Home} />
     <Route path="/auth" component={AuthPage} />
+    <Route path="/profile/update" component={UpdateProfile} />
     <Route path="/championship" component={ListChampionships} />
     <Route path="/championship/details" component={ChampionshipDetails} />
     <Route path="/extract" component={ListExtract} />

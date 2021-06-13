@@ -28,6 +28,7 @@
         "prettier"
     ],
     "rules": {
+      "jsx-a11y/label-has-associated-control": ["error", { "assert": "either" } ],
       "prettier/prettier": ["error", { "endOfLine": "auto" }],
       "react-hooks/rules-of-hooks": "error",
       "react/prop-types": "off",
