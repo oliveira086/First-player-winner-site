@@ -56,6 +56,7 @@ const InputContainer = styled.div`
     font-size: 12px;
   }
   input {
+    width: 100%;
     border: none;
     height: 26px;
   }
@@ -87,8 +88,8 @@ const Plus = styled.button`
   background-color: #00af54;
   font-size: 12px;
   border-radius: 5px;
-  top: -15px;
-  right: -15px;
+  top: -12px;
+  right: -8px;
   border: none;
   :active {
     background-color: rgba(20, 146, 81, 1);

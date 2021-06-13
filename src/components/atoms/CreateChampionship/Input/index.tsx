@@ -1,11 +1,13 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { ChangeEvent, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
+import { isAfter } from 'date-fns';
 
-interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
-  value: string;
-  items: string[];
+interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  value: string | number;
   setValue: React.Dispatch<React.SetStateAction<string>>;
   label: string;
+  date?: boolean;
+  multiline?: boolean;
 }
 
 const Container = styled.div`
@@ -17,7 +19,7 @@ const Container = styled.div`
   margin-bottom: 30px;
 `;
 
-const Select = styled.select`
+const InputContainer = styled.input`
   width: calc(100vw - 60px);
   height: 40px;
   border: 2px solid #020c28;
@@ -46,22 +48,32 @@ const Label = styled.div`
   left: 20px;
 `;
 
-const SelectInput: React.FC<SelectProps> = ({
+const Input: React.FC<InputProps> = ({
   value,
-  items,
   setValue,
   label,
+  date = false,
+  ...rest
 }) => {
+  function handleChangeValue(e: ChangeEvent<HTMLInputElement>) {
+    if (!date) {
+      setValue(e.target.value);
+    } else if (isAfter(new Date(e.target.value), Date.now())) {
+      setValue(e.target.value);
+    }
+  }
+
   return (
     <Container>
-      <Select value={value} onChange={e => setValue(e.target.value)}>
-        {items.map(i => (
-          <option value={i}>{i}</option>
-        ))}
-      </Select>
+      <InputContainer
+        value={value}
+        onChange={handleChangeValue}
+        type={date ? 'date' : 'text'}
+        {...rest}
+      />
       <Label>{label}</Label>
     </Container>
   );
 };
 
-export default SelectInput;
+export default Input;

@@ -1,9 +1,8 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { ChangeEvent, InputHTMLAttributes } from 'react';
 import styled from 'styled-components';
 
-interface SelectProps extends InputHTMLAttributes<HTMLInputElement> {
+interface TextAreaProps extends InputHTMLAttributes<HTMLTextAreaElement> {
   value: string;
-  items: string[];
   setValue: React.Dispatch<React.SetStateAction<string>>;
   label: string;
 }
@@ -17,9 +16,11 @@ const Container = styled.div`
   margin-bottom: 30px;
 `;
 
-const Select = styled.select`
+const TextAreaContainer = styled.textarea`
   width: calc(100vw - 60px);
-  height: 40px;
+  height: auto;
+  min-height: 80px;
+  max-height: 200px;
   border: 2px solid #020c28;
   border-radius: 10px;
   background-color: inherit;
@@ -28,6 +29,11 @@ const Select = styled.select`
   font-size: 12px;
   font-weight: 500;
   position: relative;
+  padding-top: 15px;
+  resize: vertical;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: Poppins, sans-serif;
 `;
 
 const Label = styled.div`
@@ -46,22 +52,28 @@ const Label = styled.div`
   left: 20px;
 `;
 
-const SelectInput: React.FC<SelectProps> = ({
+const TextArea: React.FC<TextAreaProps> = ({
   value,
-  items,
   setValue,
   label,
+  ...rest
 }) => {
+  function handleChangeValue(e: ChangeEvent<HTMLTextAreaElement>) {
+    setValue(e.target.value);
+  }
+
   return (
     <Container>
-      <Select value={value} onChange={e => setValue(e.target.value)}>
-        {items.map(i => (
-          <option value={i}>{i}</option>
-        ))}
-      </Select>
+      <TextAreaContainer
+        value={value}
+        onChange={handleChangeValue}
+        rows={1}
+        cols={150}
+        {...rest}
+      />
       <Label>{label}</Label>
     </Container>
   );
 };
 
-export default SelectInput;
+export default TextArea;
