@@ -3,11 +3,11 @@ import { Container, InputContainer } from './styles';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   statusType?: 'confirmation' | 'error';
-  place: string;
+  placeholder: string;
   title: string;
 }
 
-const Input: React.FC<InputProps> = ({ place, title }) => {
+const Input: React.FC<InputProps> = ({ placeholder, title }) => {
   const [click, setClik] = useState(true);
 
   function clicked() {
@@ -16,15 +16,11 @@ const Input: React.FC<InputProps> = ({ place, title }) => {
 
   return (
     <Container>
-      {!click && (
-        <span>
-          <b>{title}</b>
-        </span>
-      )}
+      {!click && <span>{title}</span>}
 
       <InputContainer
         onFocus={() => clicked()}
-        placeholder={click ? place : ''}
+        placeholder={click ? placeholder : ''}
       />
     </Container>
   );
