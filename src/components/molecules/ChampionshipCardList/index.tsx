@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { useHistory } from 'react-router-dom';
 import trophy from '../../../assets/icons/trophy.png';
 import calendar from '../../../assets/icons/calendar.png';
 
@@ -12,8 +12,10 @@ import {
 } from './styles';
 
 const ChampionshipCardList: React.FC = () => {
+  const { push } = useHistory();
+
   return (
-    <Container>
+    <Container onClick={() => push('/championship/details')}>
       <GameImage />
       <DescriptionContainer>
         <span className="title">

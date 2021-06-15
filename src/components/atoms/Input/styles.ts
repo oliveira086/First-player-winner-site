@@ -4,8 +4,15 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  height: 50px;
   max-width: 350px;
+
+  span {
+    display: block;
+  }
+
+  && + div {
+    margin: 30px 0;
+  }
 `;
 
 export const InputContainer = styled.input`

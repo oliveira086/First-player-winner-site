@@ -9,6 +9,7 @@ export default createGlobalStyle`
   }
   body {
     -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
   }
   body, input, button {
     font-family: 'Poppins', sans-serif;
@@ -25,5 +26,6 @@ export default createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: #000000;
   }
 `;

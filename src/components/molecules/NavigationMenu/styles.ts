@@ -1,4 +1,6 @@
 import { LiHTMLAttributes } from 'react';
+import { Link } from 'react-router-dom';
+
 import styled from 'styled-components';
 
 interface IListItem extends LiHTMLAttributes<HTMLLIElement> {
@@ -7,6 +9,7 @@ interface IListItem extends LiHTMLAttributes<HTMLLIElement> {
 
 export const Container = styled.nav`
   z-index: 1;
+  height: 60px;
   position: fixed;
   bottom: 0;
   background-color: #020c28;
@@ -50,7 +53,7 @@ export const Container = styled.nav`
   }
 `;
 
-export const ListItem = styled.li<IListItem>`
+export const ListItem = styled(Link)<IListItem>`
   cursor: pointer;
   display: flex;
   width: 70px;
@@ -60,7 +63,7 @@ export const ListItem = styled.li<IListItem>`
   justify-content: center;
   flex-direction: column;
 
-  a {
+  span {
     text-align: center;
     margin-top: 3px;
     color: ${props => (props.selected ? '#FFD12E' : '#FFF')};
