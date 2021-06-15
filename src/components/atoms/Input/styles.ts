@@ -5,9 +5,25 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   max-width: 350px;
+  div:first-child {
+    height: 18px;
+    width: 100%;
+  }
 
   span {
     display: block;
+    font-size: 12px;
+    animation-duration: 0.2s;
+    animation-name: fadein;
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
   }
 
   && + div {
