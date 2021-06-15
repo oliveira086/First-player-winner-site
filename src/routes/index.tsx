@@ -14,6 +14,7 @@ import Transaction from '../pages/TransactionFlow/Transaction';
 import ConfirmTransaction from '../pages/TransactionFlow/ConfirmTransaction';
 import TransactionAproved from '../pages/TransactionFlow/TransactionAproved';
 import Deposit from '../pages/Deposit';
+import CreateChampionship from '../pages/CreateChampioship';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -29,6 +30,7 @@ const Routes: React.FC = () => (
     <Route path="/confirmtransaction" component={ConfirmTransaction} />
     <Route path="/transactionaproved" component={TransactionAproved} />
     <Route path="/deposit" component={Deposit} />
+    <Route path="/createchampionship" component={CreateChampionship} />
   </Switch>
 );
 
