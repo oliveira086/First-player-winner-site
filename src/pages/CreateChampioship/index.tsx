@@ -8,6 +8,7 @@ import Header from '../../components/molecules/Header';
 import TextArea from '../../components/atoms/CreateChampionship/Textarea';
 import Button from '../../components/atoms/Button';
 import UploadImage from '../../components/atoms/CreateChampionship/UploadImage';
+import CostInscription from '../../components/atoms/CreateChampionship/CostInscription';
 
 const Container = styled.div`
   display: flex;
@@ -32,6 +33,7 @@ const CreateChampionship: React.FC = () => {
     'Frifas',
   ]);
   const [championshipTypes, setChampionshipTypes] = useState([
+    'Único',
     'Diário',
     'Semanal',
     'Mensal',
@@ -45,11 +47,23 @@ const CreateChampionship: React.FC = () => {
   };
   const [championshipName, setChampionshipName] = useState('');
   const [rules, setRules] = useState('');
+  const [participants, setParticipants] = useState('');
+  const [cost, setCost] = useState('0');
   const [startDate, setStartDate] = useState(format(new Date(), 'yyyy-MM-dd'));
   const [gameSelected, setGameSelected] = useState(games[0]);
   const [championshipTypesSelected, setchampionshipTypesSelected] = useState(
     championshipTypes[0],
   );
+
+  function preventNonNumericalInput(e: any) {
+    const enew = e || window.event;
+    const charCode =
+      typeof enew.which === 'undefined' ? enew.keyCode : enew.which;
+    const charStr = String.fromCharCode(charCode);
+
+    if (!charStr.match(/^[1-9]\d*$/)) e.preventDefault();
+  }
+
   return (
     <Container>
       <Header />
@@ -78,6 +92,20 @@ const CreateChampionship: React.FC = () => {
         value={startDate}
         setValue={setStartDate}
         date
+      />
+      <Input
+        label="Número de participantes"
+        value={participants}
+        setValue={setParticipants}
+        maxLength={50}
+        placeholder="Participantes"
+        pattern="[0-9]*"
+        onKeyPress={e => preventNonNumericalInput(e)}
+      />
+      <CostInscription
+        label="Preço da inscrição"
+        value={cost}
+        setValue={setCost}
       />
       <AwardInput />
       <TextArea
