@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 import { format } from 'date-fns';
 import AwardInput from '../../components/atoms/CreateChampionship/AwardsInput';
@@ -7,16 +7,19 @@ import SelectInput from '../../components/atoms/CreateChampionship/SelectInput';
 import Header from '../../components/molecules/Header';
 import TextArea from '../../components/atoms/CreateChampionship/Textarea';
 import Button from '../../components/atoms/Button';
+import UploadImage from '../../components/atoms/CreateChampionship/UploadImage';
 
 const Container = styled.div`
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   background-color: #f7f7f7;
-  button {
-    max-width: calc(100% - 60px);
+  > button {
+    width: calc(100% - 60px);
+    max-width: 500px;
+    height: 45px;
   }
 `;
 
@@ -33,6 +36,13 @@ const CreateChampionship: React.FC = () => {
     'Semanal',
     'Mensal',
   ]);
+  const [image, setImage] = useState<File>();
+  const onImageChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      const img = event.target.files[0];
+      setImage(img);
+    }
+  };
   const [championshipName, setChampionshipName] = useState('');
   const [rules, setRules] = useState('');
   const [startDate, setStartDate] = useState(format(new Date(), 'yyyy-MM-dd'));
@@ -50,6 +60,7 @@ const CreateChampionship: React.FC = () => {
         maxLength={50}
         placeholder="Seu Campeonato"
       />
+      <UploadImage setValue={onImageChange} />
       <SelectInput
         label="Games"
         value={gameSelected}
