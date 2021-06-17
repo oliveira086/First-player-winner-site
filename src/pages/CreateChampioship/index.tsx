@@ -55,7 +55,7 @@ const CreateChampionship: React.FC = () => {
     championshipTypes[0],
   );
 
-  function preventNonNumericalInput(e: any) {
+  function preventNonNumericalInput(e: React.KeyboardEvent<HTMLInputElement>) {
     const enew = e || window.event;
     const charCode =
       typeof enew.which === 'undefined' ? enew.keyCode : enew.which;

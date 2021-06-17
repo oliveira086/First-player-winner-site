@@ -1,4 +1,5 @@
 import React, { ChangeEvent, InputHTMLAttributes } from 'react';
+import { BsCardImage } from 'react-icons/bs';
 import styled from 'styled-components';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -14,7 +15,7 @@ const Container = styled.div`
   margin-bottom: 30px;
 `;
 
-const InputContainer = styled.input`
+const LabelContainer = styled.label`
   width: calc(100vw - 60px);
   height: 160px;
   border-radius: 10px;
@@ -25,14 +26,32 @@ const InputContainer = styled.input`
   font-weight: 500;
   position: relative;
   display: flex;
-  justify-items: center;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  cursor: pointer;
+  input {
+    display: none;
+  }
+  p {
+    margin-top: 16px;
+  }
+  p,
+  span {
+    font-weight: 500;
+    font-size: 9px;
+  }
 `;
 
 const UploadImage: React.FC<InputProps> = ({ setValue }) => {
   return (
     <Container>
-      <InputContainer onChange={setValue} type="file" />
+      <LabelContainer htmlFor="input-file">
+        <BsCardImage size={60} color="#020C28" />
+        <p>Adicionar imagem do campeonato</p>
+        <span>tamanho recomendado: 350p x 160px</span>
+        <input onChange={setValue} type="file" id="input-file" />
+      </LabelContainer>
     </Container>
   );
 };
