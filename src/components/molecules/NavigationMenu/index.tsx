@@ -65,7 +65,7 @@ const NavigationMenu: React.FC = () => {
           </button>
         </div>
         <ListItem
-          to="/home"
+          to="/bets"
           onClick={() => handleSelectItem(SelectRouteType.BETS)}
           selected={selectedItem === SelectRouteType.BETS}
         >
@@ -73,7 +73,7 @@ const NavigationMenu: React.FC = () => {
           <span>Apostas</span>
         </ListItem>
         <ListItem
-          to="/home"
+          to="/more"
           onClick={() => handleSelectItem(SelectRouteType.MORE)}
           selected={selectedItem === SelectRouteType.MORE}
         >
