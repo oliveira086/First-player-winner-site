@@ -43,7 +43,11 @@ const Transaction: React.FC = () => {
             allowNegativeValue={false}
           />
         </div>
-        <BalanceHeader balance={String(balance.toFixed(2)).replace('.', ',')} />
+        <section>
+          <BalanceHeader
+            balance={String(balance.toFixed(2)).replace('.', ',')}
+          />
+        </section>
       </InputContainer>
 
       <Button statusType="confirmation">Continuar</Button>

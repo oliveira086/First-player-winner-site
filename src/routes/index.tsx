@@ -18,6 +18,7 @@ import UpdateProfile from '../pages/UpdateProfile';
 import More from '../pages/More';
 import Bets from '../pages/Bets';
 import Profile from '../pages/Profile';
+import CreateChampionship from '../pages/CreateChampioship';
 
 const Routes: React.FC = () => (
   <Switch>
@@ -37,6 +38,7 @@ const Routes: React.FC = () => (
     <Route path="/deposit" component={Deposit} />
     <Route path="/more" component={More} />
     <Route path="/bets" component={Bets} />
+    <Route path="/createchampionship" component={CreateChampionship} />
   </Switch>
 );
 
