@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useCallback, useEffect, useState } from 'react';
-import { formatISO, parseISO } from 'date-fns';
+import React, { useState } from 'react';
 import { FiChevronLeft } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 import NavigationMenu from '../../components/molecules/NavigationMenu';
 import DateInput from '../../components/atoms/DateInput';
 import Carousel from '../../components/molecules/Carousel';
@@ -18,19 +18,19 @@ import profileImg from '../../assets/imgs/profile.jpg';
 
 const UpdateProfile: React.FC = () => {
   const [birthDate, setBirthDate] = useState('');
+  const { goBack } = useHistory();
 
   return (
     <Container>
       <Content>
         <ContentHeader backgroundImage={profileImg}>
-          <button type="button">
+          <button type="button" onClick={() => goBack()}>
             {' '}
             <FiChevronLeft size={25} />
           </button>
 
           <div>
-            <h2>Filipe Brombilla</h2>
-            <span>Salvar alterações</span>
+            <h2>Filipe Brombilla 3</h2>
           </div>
         </ContentHeader>
         <main>

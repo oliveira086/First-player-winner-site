@@ -8,20 +8,7 @@ interface HeaderProps {
   backgroundImage: string;
 }
 
-export const Content = styled.div`
-  main {
-    padding: 15px 30px;
-
-    strong {
-      font-size: 18px;
-      font-weight: 700;
-    }
-
-    > button {
-      margin-top: 60px;
-    }
-  }
-`;
+export const Content = styled.div``;
 
 export const ContentHeader = styled.div<HeaderProps>`
   background: blue;
@@ -59,6 +46,16 @@ export const ContentHeader = styled.div<HeaderProps>`
       line-height: 54px;
       margin-bottom: 10px;
     }
+
+    button {
+      min-width: 120px;
+      font-size: 12px;
+      font-weight: 600;
+      border: 0;
+      background: #fbaf00;
+      padding: 5px 15px;
+      border-radius: 10px;
+    }
   }
 `;
 
@@ -91,5 +88,34 @@ export const CarouselItem = styled.div`
   div {
     position: relative;
     top: 45px;
+  }
+`;
+
+export const Achievements = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  margin-bottom: 60px;
+  border-bottom: 2px solid #fbaf00;
+  div {
+    span {
+      font-weight: 800;
+      font-size: 16px;
+      color: #fbaf00;
+    }
+    p {
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+`;
+
+export const CarouselsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  > div {
+    margin-bottom: 15%;
   }
 `;
