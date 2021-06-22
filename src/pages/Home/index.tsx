@@ -1,5 +1,5 @@
 import React from 'react';
-import HeaderMainPage from '../../components/molecules/HeaderMainPage';
+import HeaderMainPage from './components/HeaderMainPage';
 
 import NavigationMenu from '../../components/molecules/NavigationMenu';
 import Carousel from '../../components/molecules/Carousel';

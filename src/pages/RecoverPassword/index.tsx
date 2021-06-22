@@ -44,7 +44,13 @@ const RecoverPassword: React.FC = () => {
       )}
       <ButtonsContainer>
         {!isEmailSended && (
-          <Button statusType="confirmation"> Recuperar senha</Button>
+          <Button
+            statusType="confirmation"
+            onClick={() => setIsEmailSended(true)}
+          >
+            {' '}
+            Recuperar senha
+          </Button>
         )}
         <Button statusType="cancel" onClick={() => push('/auth')}>
           {isEmailSended ? 'voltar' : 'Cancelar'}
