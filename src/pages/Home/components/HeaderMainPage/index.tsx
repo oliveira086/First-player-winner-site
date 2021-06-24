@@ -1,6 +1,6 @@
 import React from 'react';
 import { BiFilterAlt, BiSearch } from 'react-icons/bi';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 
 import { Header, Card, Icon, SearchBox, SearchContainer } from './styles';
 
@@ -27,9 +27,7 @@ const HeaderMainPage: React.FC = () => {
           </span>
           <span>$ 100,00 </span>
           <hr />
-          <div>
-            <a href="#1">Ver extrato</a>
-          </div>
+          <Link to="/extract">Ver extrato</Link>
         </div>
         <button type="button" onClick={() => push('/contacts')}>
           Transferir

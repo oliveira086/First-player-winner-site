@@ -19,8 +19,12 @@ const Auth: React.FC = () => {
   const { push } = useHistory();
 
   const handleSubmit = useCallback(() => {
+    if (isRegister) {
+      setIsRegister(false);
+      return;
+    }
     push('/home');
-  }, [push]);
+  }, [push, isRegister]);
 
   return (
     <Container>
