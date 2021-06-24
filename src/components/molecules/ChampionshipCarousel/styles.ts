@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -17,6 +18,7 @@ export const ChampionShipItem = styled.div`
 `;
 
 export const ChampionShipItemContent = styled.div`
+  cursor: pointer;
   background: #e9e9e9;
   width: 90%;
   min-width: 100px;
@@ -24,4 +26,9 @@ export const ChampionShipItemContent = styled.div`
   border-radius: 5px;
   display: flex;
   margin: 0 200px;
+  transition: background 0.2s;
+
+  :hover {
+    background: ${darken(0.1, '#e9e9e9')};
+  }
 `;

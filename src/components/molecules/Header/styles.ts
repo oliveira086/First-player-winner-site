@@ -9,4 +9,9 @@ export const Container = styled.header`
   padding: 0 30px;
 `;
 
-export const IconContainer = styled.div``;
+export const IconContainer = styled.button.attrs({
+  type: 'button',
+})`
+  border: 0;
+  background: transparent;
+`;
