@@ -5,12 +5,12 @@ import { FiChevronLeft } from 'react-icons/fi';
 import { Container, Header } from './styles';
 
 const ChampionshipDetails: React.FC = () => {
-  const { push } = useHistory();
+  const { goBack } = useHistory();
 
   return (
     <Container>
       <Header>
-        <button type="button" onClick={() => push('/championship')}>
+        <button type="button" onClick={() => goBack()}>
           <FiChevronLeft size={30} />
         </button>
       </Header>
