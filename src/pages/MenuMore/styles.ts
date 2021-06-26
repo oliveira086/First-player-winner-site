@@ -26,7 +26,7 @@ const UserInfo = styled.div`
     margin-top: 30px;
     gap: 10px;
 
-    .icon-container {
+    button {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,6 +34,7 @@ const UserInfo = styled.div`
       width: 30px;
       background-color: #fbaf00;
       border-radius: 5px;
+      border: none;
     }
     span {
       height: 30px;
