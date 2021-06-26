@@ -19,11 +19,13 @@ import More from '../pages/More';
 import Bets from '../pages/Bets';
 import Profile from '../pages/Profile';
 import CreateChampionship from '../pages/CreateChampioship';
+import MenuMore from '../pages/MenuMore';
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
     <Route path="/home" component={Home} />
+    <Route path="/more" component={MenuMore} />
     <Route path="/auth" component={AuthPage} />
     <Route path="/profile" exact component={Profile} />
     <Route path="/profile/update" component={UpdateProfile} />
