@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { FiCopy, FiSearch } from 'react-icons/fi';
 import {
@@ -16,9 +16,15 @@ import NavigationMenu from '../../components/molecules/NavigationMenu';
 import { Container, UserInfo, Options } from './styles';
 
 const MenuMore: React.FC = () => {
+  const [userId, setUserId] = useState('aosidsfjaosida-123asdfas');
   const history = useHistory();
+
   function handleNavigate(path: string) {
     history.push(path);
+  }
+
+  function handleCopyToClipboard() {
+    navigator.clipboard.writeText(userId);
   }
 
   return (
@@ -30,10 +36,10 @@ const MenuMore: React.FC = () => {
           alt="User Avatar"
         />
         <div className="user-id">
-          <span>aosidfjaosida-123asdfas</span>
-          <div className="icon-container">
+          <span>{userId}</span>
+          <button type="button" onClick={handleCopyToClipboard}>
             <FiCopy size={16} />
-          </div>
+          </button>
         </div>
       </UserInfo>
       <Options>
