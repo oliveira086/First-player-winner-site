@@ -14,16 +14,30 @@ import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 import logoImg from '../../assets/imgs/logo.png';
 
+import LoginService from '../../services/loginService/loginService';
+import SingUpService from '../../services/SingUpService/SingUpService';
+
 const Auth: React.FC = () => {
   const [isRegister, setIsRegister] = useState(false);
   const { push } = useHistory();
 
   const handleSubmit = useCallback(() => {
     if (isRegister) {
+      SingUpService({
+        email: 'andreluisoliveira013@gmail.com',
+        password: 'teste123',
+      }).then(res => {
+        console.log(res);
+      });
       setIsRegister(false);
-      return;
+      push('/home');
     }
-    push('/home');
+    LoginService({
+      email: 'andreluisoliveira013@gmail.com',
+      password: 'teste123',
+    }).then(res => {
+      console.log(res);
+    });
   }, [push, isRegister]);
 
   return (
