@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -42,6 +43,7 @@ export const ContactsContainer = styled.div`
 `;
 
 export const ContactCard = styled.div`
+  cursor: pointer;
   display: flex;
   height: 50px;
   width: calc(100% - 60px);
@@ -52,6 +54,11 @@ export const ContactCard = styled.div`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   margin-bottom: 16px;
+
+  :hover {
+    background: ${darken(0.1, '#fff')};
+  }
+
   .name {
     text-align: left;
     font-size: 14px;

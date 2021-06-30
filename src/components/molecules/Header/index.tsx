@@ -12,11 +12,11 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ search = false, qrCode = false }) => {
-  const { push } = useHistory();
+  const { goBack } = useHistory();
 
   return (
     <Container>
-      <IconContainer onClick={() => push('/home')}>
+      <IconContainer onClick={() => goBack()}>
         <IconContext.Provider value={{ size: '20px' }}>
           <FiChevronLeft />
         </IconContext.Provider>
