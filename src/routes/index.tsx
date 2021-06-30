@@ -12,13 +12,11 @@ import ChampionshipDetails from '../pages/ChampionshipsDetails';
 import RecoverPassword from '../pages/RecoverPassword';
 import Deposit from '../pages/Deposit';
 import UpdateProfile from '../pages/UpdateProfile';
-import More from '../pages/More';
 import Bets from '../pages/Bets';
 import Profile from '../pages/Profile';
 import CreateChampionship from '../pages/CreateChampioship';
 import NewTransaction from '../pages/NewTransaction';
 import MenuMore from '../pages/MenuMore';
-
 
 const Routes: React.FC = () => (
   <Switch>
