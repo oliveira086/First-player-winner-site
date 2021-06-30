@@ -10,16 +10,15 @@ import ListExtract from '../pages/ListExtract';
 import ListContacts from '../pages/ListContacts';
 import ChampionshipDetails from '../pages/ChampionshipsDetails';
 import RecoverPassword from '../pages/RecoverPassword';
-import Transaction from '../pages/TransactionFlow/Transaction';
-import ConfirmTransaction from '../pages/TransactionFlow/ConfirmTransaction';
-import TransactionAproved from '../pages/TransactionFlow/TransactionAproved';
 import Deposit from '../pages/Deposit';
 import UpdateProfile from '../pages/UpdateProfile';
 import More from '../pages/More';
 import Bets from '../pages/Bets';
 import Profile from '../pages/Profile';
 import CreateChampionship from '../pages/CreateChampioship';
+import NewTransaction from '../pages/NewTransaction';
 import MenuMore from '../pages/MenuMore';
+
 
 const Routes: React.FC = () => (
   <Switch>
@@ -30,17 +29,15 @@ const Routes: React.FC = () => (
     <Route path="/profile" exact component={Profile} />
     <Route path="/profile/update" component={UpdateProfile} />
     <Route path="/championship" exact component={ListChampionships} />
+    <Route path="/championship/create" component={CreateChampionship} />
     <Route path="/championship/details" component={ChampionshipDetails} />
     <Route path="/extract" component={ListExtract} />
     <Route path="/contacts" component={ListContacts} />
     <Route path="/password/recover" component={RecoverPassword} />
-    <Route path="/transaction" component={Transaction} />
-    <Route path="/confirmtransaction" component={ConfirmTransaction} />
-    <Route path="/transactionaproved" component={TransactionAproved} />
     <Route path="/deposit" component={Deposit} />
-    <Route path="/more" component={More} />
+    <Route path="/more" component={MenuMore} />
     <Route path="/bets" component={Bets} />
-    <Route path="/createchampionship" component={CreateChampionship} />
+    <Route path="/transaction" component={NewTransaction} />
   </Switch>
 );
 

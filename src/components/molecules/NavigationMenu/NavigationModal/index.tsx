@@ -18,7 +18,9 @@ const NavigationModal: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
           </button>
         </div>
         <Button onClick={() => push('/contacts')}>Nova transferência</Button>
-        <Button>Criar campeonato</Button>
+        <Button onClick={() => push('/championship/create')}>
+          Criar campeonato
+        </Button>
 
         <Button statusType="cancel" onClick={setIsOpen}>
           Voltar
