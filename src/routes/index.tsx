@@ -17,11 +17,14 @@ import Bets from '../pages/Bets';
 import Profile from '../pages/Profile';
 import CreateChampionship from '../pages/CreateChampioship';
 import NewTransaction from '../pages/NewTransaction';
+import MenuMore from '../pages/MenuMore';
+
 
 const Routes: React.FC = () => (
   <Switch>
     <Route path="/" exact component={PreLoginPage} />
     <Route path="/home" component={Home} />
+    <Route path="/more" component={MenuMore} />
     <Route path="/auth" component={AuthPage} />
     <Route path="/profile" exact component={Profile} />
     <Route path="/profile/update" component={UpdateProfile} />
@@ -32,7 +35,7 @@ const Routes: React.FC = () => (
     <Route path="/contacts" component={ListContacts} />
     <Route path="/password/recover" component={RecoverPassword} />
     <Route path="/deposit" component={Deposit} />
-    <Route path="/more" component={More} />
+    <Route path="/more" component={MenuMore} />
     <Route path="/bets" component={Bets} />
     <Route path="/transaction" component={NewTransaction} />
   </Switch>
