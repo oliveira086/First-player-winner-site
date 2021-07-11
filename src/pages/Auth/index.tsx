@@ -1,5 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { Formik } from 'formik';
+import * as yup from 'yup';
 import {
   Container,
   Footer,
@@ -13,32 +16,40 @@ import {
 import Button from '../../components/atoms/Button';
 import Input from '../../components/atoms/Input';
 import logoImg from '../../assets/imgs/logo.png';
+import { emailValidator, passwordValidator } from '../../utils/yupValidators';
+import { useAuth } from '../../contexts/auth';
 
-import LoginService from '../../services/loginService/loginService';
-import SingUpService from '../../services/SingUpService/SingUpService';
+interface LoginData {
+  email: string;
+  password: string;
+}
 
 const Auth: React.FC = () => {
   const [isRegister, setIsRegister] = useState(false);
   const { push } = useHistory();
+  const { signIn, user, signed } = useAuth();
 
-  const handleSubmit = useCallback(() => {
-    if (isRegister) {
-      SingUpService({
-        email: 'andreluisoliveira013@gmail.com',
-        password: 'teste123',
-      }).then(res => {
-        console.log(res);
+  const handleLogin = async ({ email, password }: LoginData) => {
+    try {
+      console.log('ei', signed, user);
+      await signIn({
+        email,
+        password,
       });
-      setIsRegister(false);
+
+      toast.success('Login efetuado com sucesso');
       push('/home');
+    } catch (err) {
+      toast.error(
+        'Falha no login, verifique suas credenciais e tente novamente',
+      );
     }
-    LoginService({
-      email: 'andreluisoliveira013@gmail.com',
-      password: 'teste123',
-    }).then(res => {
-      console.log(res);
-    });
-  }, [push, isRegister]);
+  };
+
+  const loginValidationSchema = yup.object().shape({
+    email: emailValidator,
+    password: passwordValidator,
+  });
 
   return (
     <Container>
@@ -59,35 +70,60 @@ const Auth: React.FC = () => {
           </div>
         </HeaderContainer>
         {isRegister && <Title>Cadastre-se</Title>}
+        <Formik
+          initialValues={{ email: '', password: '' }}
+          validateOnChange={false}
+          validateOnBlur={false}
+          validationSchema={loginValidationSchema}
+          onSubmit={values => handleLogin(values)}
+        >
+          {({ handleChange, values, errors, handleSubmit }) => (
+            <Form onSubmit={handleSubmit}>
+              <Input
+                type="email"
+                name="email"
+                title="Email"
+                placeholder="Email"
+                onChange={handleChange}
+                value={values.email}
+                error={errors.email ? errors.email : undefined}
+              />
+              <Input
+                type="password"
+                name="password"
+                title="Senha"
+                placeholder="Senha"
+                onChange={handleChange}
+                value={values.password}
+                error={errors.password ? errors.password : undefined}
+              />
+              {isRegister && (
+                <Input title="Confirmar senha" placeholder="Confirmar senha" />
+              )}
+              {!isRegister && (
+                <LinkContainer>
+                  <Link to="/password/recover">Recuperar senha?</Link>
+                </LinkContainer>
+              )}
 
-        <Form>
-          <Input title="Email" placeholder="Email" />
-          <Input title="Senha" placeholder="Senha" />
-          {isRegister && (
-            <Input title="Confirmar senha" placeholder="Confirmar senha" />
+              <Button statusType="confirmation" type="submit">
+                {isRegister ? 'Cadastre-se' : 'Entrar'}
+              </Button>
+            </Form>
           )}
-        </Form>
-        {!isRegister && (
-          <LinkContainer>
-            <Link to="/password/recover">Recuperar senha?</Link>
-          </LinkContainer>
-        )}
+        </Formik>
+        <Footer>
+          <button type="button" onClick={() => setIsRegister(state => !state)}>
+            {isRegister ? (
+              <>
+                Já possui conta? <strong>Logar</strong>
+              </>
+            ) : (
+              'Cadastre-se'
+            )}
+          </button>
+        </Footer>
       </Content>
-      <Footer>
-        <Button statusType="confirmation" onClick={handleSubmit}>
-          {isRegister ? 'Cadastre-se' : 'Entrar'}
-        </Button>
-
-        <button type="button" onClick={() => setIsRegister(state => !state)}>
-          {isRegister ? (
-            <>
-              Já possui conta? <strong>Logar</strong>
-            </>
-          ) : (
-            'Cadastre-se'
-          )}
-        </button>
-      </Footer>
     </Container>
   );
 };

@@ -82,12 +82,10 @@ export const Footer = styled.div`
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: center;
   align-items: center;
-  background-color: #f7f7f7;
 
-  button + button {
+  button {
     background: transparent;
     border: 0;
   }
