@@ -7,7 +7,7 @@ import React, {
   useEffect,
 } from 'react';
 import { IUser } from '../models/User';
-import { loginService } from '../services/auth';
+import { loginService, showProfileService } from '../services/auth';
 import api from '../services/api';
 
 interface SignInCredentials {
@@ -56,17 +56,19 @@ const AuthProvider: React.FC = ({ children }) => {
   }, []);
 
   const signIn = useCallback(async ({ email, password }) => {
-    const { user, accessToken } = await loginService({
+    const { accessToken } = await loginService({
       email,
       password,
     });
+
+    api.defaults.headers.Authorization = `Bearer ${accessToken}`;
+
+    const user = await showProfileService();
 
     setData({
       user,
       token: accessToken,
     });
-
-    api.defaults.headers.Authorization = `Bearer ${accessToken}`;
 
     localStorage.setItem(LocalStorageItems.User, JSON.stringify(user));
     localStorage.setItem(LocalStorageItems.Token, JSON.stringify(accessToken));

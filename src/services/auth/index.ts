@@ -20,32 +20,17 @@ export async function loginService({
   return data;
 }
 
-interface SingUpPayload {
+interface SingUpRequest {
   email: string;
   password: string;
 }
 
-interface SingUpResponse {
-  http: string | undefined;
-  https: string | undefined;
-  thumbs: {
-    30: {
-      http: string | undefined;
-      https: string | undefined;
-    };
-    90: {
-      http: string | undefined;
-      https: string | undefined;
-    };
-    180: {
-      http: string | undefined;
-      https: string | undefined;
-    };
-  };
+export async function registerService(data: SingUpRequest): Promise<void> {
+  await api.post('/auth/signup', data);
 }
 
-export async function registerService(
-  data: SingUpPayload,
-): Promise<SingUpResponse> {
-  return api.post('/auth/signup', data);
+export async function showProfileService(): Promise<IUser> {
+  const user: IUser = await api.get('/users/profile');
+
+  return user;
 }

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Formik } from 'formik';
@@ -18,6 +18,7 @@ import Input from '../../components/atoms/Input';
 import logoImg from '../../assets/imgs/logo.png';
 import { emailValidator, passwordValidator } from '../../utils/yupValidators';
 import { useAuth } from '../../contexts/auth';
+import { registerService } from '../../services/auth';
 
 interface LoginData {
   email: string;
@@ -29,9 +30,11 @@ const Auth: React.FC = () => {
   const { push } = useHistory();
   const { signIn, user, signed } = useAuth();
 
+  console.log(user, signed);
+
   const handleLogin = async ({ email, password }: LoginData) => {
     try {
-      console.log('ei', signed, user);
+      console.log('called', email, password);
       await signIn({
         email,
         password,
@@ -39,10 +42,21 @@ const Auth: React.FC = () => {
 
       toast.success('Login efetuado com sucesso');
       push('/home');
-    } catch (err) {
+    } catch (error) {
       toast.error(
         'Falha no login, verifique suas credenciais e tente novamente',
       );
+    }
+  };
+
+  const handleRegister = async ({ email, password }: LoginData) => {
+    try {
+      await registerService({ email, password });
+
+      toast.success('Usuário registrado com sucesso');
+      setIsRegister(false);
+    } catch (error) {
+      toast.error('Erro no cadastro de usuário, tente novamente mais tarde');
     }
   };
 
@@ -75,7 +89,9 @@ const Auth: React.FC = () => {
           validateOnChange={false}
           validateOnBlur={false}
           validationSchema={loginValidationSchema}
-          onSubmit={values => handleLogin(values)}
+          onSubmit={values =>
+            isRegister ? handleRegister(values) : handleLogin(values)
+          }
         >
           {({ handleChange, values, errors, handleSubmit }) => (
             <Form onSubmit={handleSubmit}>
