@@ -1,28 +1,25 @@
 import React, { InputHTMLAttributes, useState } from 'react';
-import { Container, InputContainer } from './styles';
+import { Container, InputContainer, ErrorText, InputLabel } from './styles';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   statusType?: 'confirmation' | 'error';
-  placeholder: string;
   title: string;
+  error?: string;
 }
 
-const Input: React.FC<InputProps> = ({ placeholder, title }) => {
-  const [click, setClik] = useState(true);
-
-  function clicked(isClicked: boolean) {
-    setClik(isClicked);
-  }
+const Input: React.FC<InputProps> = ({ title, error, ...props }) => {
+  const [isLabelVisible, setIsLabelVisible] = useState(false);
 
   return (
     <Container>
-      {!click ? <span>{title}</span> : <div />}
-
+      <InputLabel visible={isLabelVisible}>{title}</InputLabel>
       <InputContainer
-        onFocus={() => clicked(false)}
-        onBlur={() => clicked(true)}
-        placeholder={click ? placeholder : ''}
+        {...props}
+        onFocus={() => setIsLabelVisible(true)}
+        placeholder={!isLabelVisible ? title : ''}
       />
+
+      {error && <ErrorText>{error}</ErrorText>}
     </Container>
   );
 };

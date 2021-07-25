@@ -6,6 +6,7 @@ import {
   AiFillTrophy,
   AiOutlineHome,
   AiOutlineUser,
+  AiFillCloseCircle,
 } from 'react-icons/ai';
 import { GiClover } from 'react-icons/gi';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
@@ -14,10 +15,12 @@ import Header from '../../components/molecules/Header';
 import NavigationMenu from '../../components/molecules/NavigationMenu';
 
 import { Container, UserInfo, Options } from './styles';
+import { useAuth } from '../../contexts/auth';
 
 const MenuMore: React.FC = () => {
   const [userId, setUserId] = useState('aosidsfjaosida-123asdfas');
   const history = useHistory();
+  const { signOut } = useAuth();
 
   function handleNavigate(path: string) {
     history.push(path);
@@ -70,6 +73,10 @@ const MenuMore: React.FC = () => {
         <button type="button" onClick={() => handleNavigate('extract')}>
           <AiFillBank size={24} />
           <span>Saques</span>
+        </button>
+        <button type="button" onClick={signOut}>
+          <AiFillCloseCircle size={24} />
+          <span>Sair</span>
         </button>
       </Options>
       <NavigationMenu />
