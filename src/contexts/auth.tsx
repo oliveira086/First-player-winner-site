@@ -16,8 +16,9 @@ interface SignInCredentials {
 }
 
 interface AuthContextData {
-  signed: boolean;
+  token: string;
   user: IUser;
+  signed: boolean;
   signIn(credentials: SignInCredentials): Promise<void>;
   signOut(): void;
 }
@@ -55,7 +56,7 @@ const AuthProvider: React.FC = ({ children }) => {
     })();
   }, []);
 
-  const signIn = useCallback(async ({ email, password }) => {
+  const signIn = useCallback(async ({ email, password }: SignInCredentials) => {
     const { accessToken } = await loginService({
       email,
       password,
@@ -83,7 +84,13 @@ const AuthProvider: React.FC = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ signed: true, user: data.user, signIn, signOut }}
+      value={{
+        user: data.user,
+        signed: !!data.user,
+        token: data.token,
+        signIn,
+        signOut,
+      }}
     >
       {children}
     </AuthContext.Provider>

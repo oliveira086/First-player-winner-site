@@ -28,13 +28,10 @@ interface LoginData {
 const Auth: React.FC = () => {
   const [isRegister, setIsRegister] = useState(false);
   const { push } = useHistory();
-  const { signIn, user, signed } = useAuth();
-
-  console.log(user, signed);
+  const { signIn } = useAuth();
 
   const handleLogin = async ({ email, password }: LoginData) => {
     try {
-      console.log('called', email, password);
       await signIn({
         email,
         password,
@@ -43,6 +40,8 @@ const Auth: React.FC = () => {
       toast.success('Login efetuado com sucesso');
       push('/home');
     } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
       toast.error(
         'Falha no login, verifique suas credenciais e tente novamente',
       );

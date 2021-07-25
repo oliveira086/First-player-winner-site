@@ -7,16 +7,19 @@ import GlobalStyles from './styles/global';
 // import Theme from './styles/theme';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import AppProvider from './contexts';
 
 const queryClient = new QueryClient();
 
 const App: React.FC = () => (
   <QueryClientProvider client={queryClient}>
-    <Router>
-      <Routes />
-      <GlobalStyles />
-      <ToastContainer autoClose={4000} />
-    </Router>
+    <AppProvider>
+      <Router>
+        <Routes />
+        <GlobalStyles />
+        <ToastContainer autoClose={4000} />
+      </Router>
+    </AppProvider>
   </QueryClientProvider>
 );
 
