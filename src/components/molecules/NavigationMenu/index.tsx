@@ -13,7 +13,7 @@ import NavigationModal from './NavigationModal';
 
 // eslint-disable-next-line no-shadow
 enum SelectRouteType {
-  HOME = 'home',
+  HOME = '',
   CHAMPIONSHIP = 'championship',
   BETS = 'bets',
   MORE = 'more',
@@ -44,7 +44,7 @@ const NavigationMenu: React.FC = () => {
       <NavigationModal isOpen={modalOpen} setIsOpen={handleToggleModal} />
       <ul>
         <ListItem
-          to="/home"
+          to="/"
           onClick={() => handleSelectItem(SelectRouteType.HOME)}
           selected={selectedItem === SelectRouteType.HOME}
         >

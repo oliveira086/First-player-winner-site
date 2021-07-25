@@ -18,7 +18,7 @@ import MenuMore from '../pages/MenuMore';
 
 const AuthenticatedRoutes: React.FC = () => (
   <Switch>
-    <Route path="/home" component={Home} />
+    <Route path="/" exact component={Home} />
     <Route path="/more" component={MenuMore} />
     <Route path="/profile" exact component={Profile} />
     <Route path="/profile/update" component={UpdateProfile} />
